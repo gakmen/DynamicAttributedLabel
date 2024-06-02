@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "4AB6D72F-BC08-4A41-BEF2-F7598126317A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DynamicAttributedLabel.xcodeproj",
+      "identifier" : "72AB043E2C0C450400E399A7",
+      "name" : "DynamicAttributedLabel"
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:DynamicAttributedLabel.xcodeproj",
+        "identifier" : "72AB04542C0C450600E399A7",
+        "name" : "DynamicAttributedLabelTests"
+      }
+    }
+  ],
+  "version" : 1
+}
