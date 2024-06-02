@@ -13,6 +13,8 @@
 		72AB044C2C0C450500E399A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72AB044B2C0C450500E399A7 /* Assets.xcassets */; };
 		72AB044F2C0C450500E399A7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 72AB044E2C0C450500E399A7 /* Base */; };
 		72AB045A2C0C450600E399A7 /* DynamicAttributedLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB04592C0C450600E399A7 /* DynamicAttributedLabelTests.swift */; };
+		72AB04742C0C4B9C00E399A7 /* AttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AB04732C0C4B9C00E399A7 /* AttributedLabel.swift */; };
+		72AB04762C0C5D6200E399A7 /* snapshots in Resources */ = {isa = PBXBuildFile; fileRef = 72AB04752C0C5D6200E399A7 /* snapshots */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		72AB04552C0C450600E399A7 /* DynamicAttributedLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicAttributedLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AB04592C0C450600E399A7 /* DynamicAttributedLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicAttributedLabelTests.swift; sourceTree = "<group>"; };
 		72AB04722C0C46D300E399A7 /* DynamicAttributedLabel.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DynamicAttributedLabel.xctestplan; sourceTree = "<group>"; };
+		72AB04732C0C4B9C00E399A7 /* AttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedLabel.swift; sourceTree = "<group>"; };
+		72AB04752C0C5D6200E399A7 /* snapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = snapshots; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				72AB044B2C0C450500E399A7 /* Assets.xcassets */,
 				72AB044D2C0C450500E399A7 /* LaunchScreen.storyboard */,
 				72AB04502C0C450500E399A7 /* Info.plist */,
+				72AB04732C0C4B9C00E399A7 /* AttributedLabel.swift */,
 			);
 			path = DynamicAttributedLabel;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		72AB04582C0C450600E399A7 /* DynamicAttributedLabelTests */ = {
 			isa = PBXGroup;
 			children = (
+				72AB04752C0C5D6200E399A7 /* snapshots */,
 				72AB04592C0C450600E399A7 /* DynamicAttributedLabelTests.swift */,
 			);
 			path = DynamicAttributedLabelTests;
@@ -186,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AB04762C0C5D6200E399A7 /* snapshots in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AB04742C0C4B9C00E399A7 /* AttributedLabel.swift in Sources */,
 				72AB04472C0C450400E399A7 /* ViewController.swift in Sources */,
 				72AB04432C0C450400E399A7 /* AppDelegate.swift in Sources */,
 				72AB04452C0C450400E399A7 /* SceneDelegate.swift in Sources */,
