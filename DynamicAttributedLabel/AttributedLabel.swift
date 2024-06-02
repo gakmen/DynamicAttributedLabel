@@ -81,7 +81,7 @@ public class AttributedLabel: UILabel {
   }
 }
 
-public extension NSAttributedString {
+extension NSAttributedString {
   static func attributedString(with text: String) -> NSAttributedString {
     NSAttributedString(string: text, attributes: attributes())
   }
@@ -106,7 +106,7 @@ public extension NSAttributedString {
 }
 
 extension UIFont {
-  public func scaledFont() -> UIFont {
+  func scaledFont() -> UIFont {
     UIFontMetrics.default.scaledFont(for: self)
   }
 }
