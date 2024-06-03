@@ -1,20 +1,22 @@
-//
-//  DynamicAttributedLabelTests.swift
-//  DynamicAttributedLabelTests
-//
-//  Created by Gosha Akmen on 02.06.2024.
-//
-
 import XCTest
 @testable import DynamicAttributedLabel
+
+class CustomVC: UIViewController {
+  override func viewIsAppearing(_ animated: Bool) {
+    super.viewIsAppearing(animated)
+
+    NotificationCenter.default.post(name: UIContentSizeCategory.didChangeNotification, object: nil)
+
+  }
+}
 
 final class DynamicAttributedLabelTests: XCTestCase {
 
   func test() {
-    let vc = ViewController()
+    let vc = CustomVC()
     vc.view.backgroundColor = .white
 
-    let label = AttributedLabel(text: "TEXT")
+    let label = AttributedLabel(text: "TEXT", sendTraits: true)
     label.backgroundColor = .green
 
     vc.view.addSubview(label)
@@ -24,7 +26,10 @@ final class DynamicAttributedLabelTests: XCTestCase {
       label.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor)
     ])
 
-    record(snapshot: vc.snapshot(for: .iPhone14(style: .light, contentSize: .extraExtraExtraLarge)) , named: "AttributedLabel")
+    record(
+      snapshot: vc.snapshot(for: .iPhone14(style: .light, contentSize: .extraExtraExtraLarge)),
+      named: "AttributedLabel"
+    )
   }
 }
 
@@ -54,7 +59,6 @@ extension XCTestCase {
         line: line
       )
     }
-
   }
 
   func record(snapshot: UIImage, named name: String, file: StaticString = #filePath, line: UInt = #line) {

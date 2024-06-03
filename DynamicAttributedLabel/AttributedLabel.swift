@@ -2,8 +2,10 @@ import Foundation
 import UIKit
 
 public class AttributedLabel: UILabel {
+  var sendTraits: Bool = false
 
-  public init(text: String) {
+  public init(text: String, sendTraits: Bool = false) {
+    self.sendTraits = sendTraits
     super.init(frame: .zero)
 
     translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +43,10 @@ public class AttributedLabel: UILabel {
     guard let text else { return }
 
     let attributedString = NSMutableAttributedString(
-      attributedString: .attributedString(with: text)
+      attributedString: .attributedString(
+        with: text,
+        traits: sendTraits ? traitCollection : nil
+      )
     )
     scaleLineHeightFor(attributedString)
 
@@ -82,12 +87,12 @@ public class AttributedLabel: UILabel {
 }
 
 extension NSAttributedString {
-  static func attributedString(with text: String) -> NSAttributedString {
-    NSAttributedString(string: text, attributes: attributes())
+  static func attributedString(with text: String, traits: UITraitCollection?) -> NSAttributedString {
+    NSAttributedString(string: text, attributes: attributes(traits))
   }
 
-  static func attributes() -> [NSAttributedString.Key: Any] {
-    let font = UIFont.systemFont(ofSize: 18, weight: .bold).scaledFont()
+  static func attributes(_ traits: UITraitCollection?) -> [NSAttributedString.Key: Any] {
+    let font = UIFont.systemFont(ofSize: 18, weight: .bold).scaledFont(traits)
     let lineHeight = CGFloat(22)
 
     let paragraph = NSMutableParagraphStyle()
@@ -106,7 +111,11 @@ extension NSAttributedString {
 }
 
 extension UIFont {
-  func scaledFont() -> UIFont {
-    UIFontMetrics.default.scaledFont(for: self)
+  func scaledFont(_ traits: UITraitCollection?) -> UIFont {
+    if let traits {
+      return UIFontMetrics.default.scaledFont(for: self, compatibleWith: traits)
+    } else {
+      return UIFontMetrics.default.scaledFont(for: self)
+    }
   }
 }
